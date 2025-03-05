@@ -1,0 +1,31 @@
+{
+  "name": "@knadh/highlighted-input",
+  "version": "1.0.0",
+  "description": "A tiny, zero-dependency lib for highlighting keywords and tags in an input field.",
+  "main": "highlighted-input.js",
+  "files": [
+    "highlighted-input.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knadh/highlighted-input.js.git"
+  },
+  "keywords": [
+    "input",
+    "richtext",
+    "highlight",
+    "autocomplete"
+  ],
+  "author": "Kailash Nadh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/knadh/highlighted-input.js/issues"
+  },
+  "homepage": "https://github.com/knadh/highlighted-input.js#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

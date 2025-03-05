@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Highlighted Search Input Javascript lib</title>
+  <meta name="description" content="Highlight keywords and tags in a search input component as you type.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      font-size: 18px;
+      line-height: 27px;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 2.6rem;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      font-size: 0.8rem;
+    }
+      footer, footer a {
+        color: #888;
+      }
+
+    .info {
+      color: #666;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    /* Lib component styles */
+    .highlighted-wrap {
+      position: relative;
+      margin: 1rem 0;
+    }
+    
+    .highlighted-input,
+    .highlighted-layer {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.3rem;
+      font-family: inherit;
+      color: #444;
+      max-width: 100%;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      height: 100%;
+    }
+
+    .highlighted-input {
+      background: transparent;
+      color: transparent;
+      caret-color: #111;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      position: relative;
+      z-index: 2;
+    }
+    .highlighted-input:focus {
+      outline: none;
+      border-color: #0066cc;
+    }
+    
+    .highlighted-layer {
+      background-color: #fff;
+      position: absolute;
+      pointer-events: none;
+      white-space: pre;
+      z-index: 1;
+    }
+
+    /* Color schemes for different keyword types */
+    .highlighted-term {
+      background: #eee;
+      border-radius: 2px;
+      border-radius: 2px;
+    }
+    .highlighted-h1 {
+      color: #0066cc;
+      background: #e6f2ff;
+    }
+    
+    .highlighted-h2 {
+      color: #cc6600;
+      background: #fff2e6;
+    }
+  </style>
+</head>
+<body>
+  <h1>Highlighted search input</h1>
+  <p>
+    highlighted-input.js is a super tiny Javascript lib that highlights specific keywords
+    and tags in an <code>&lt;input&gt;</code> field. It is ideal for search inputs
+    to highlight field selectors as the user types. It is ~450 bytes minified+gzipped.
+  </p>
+  <br /><br />
+  
+  <h3><label for="input">Demo</label></h3>
+  <input type="text" id="input" value="lang:js other stuff AND repo:foo and more OR user:bar" placeholder="Eg: lang:js AND repo:foo OR user:bar" />
+  
+  <p class="info">Highlighted keywords: <code>repo: lang: user: AND OR NOT</code></p>
+  <script type="module">
+    import { highlightedInput } from './highlighted-input.min.js';
+
+    // Initialize the highlighter with the input element and keyword map
+    const input = document.getElementById("input");
+    const h1 = "highlighted-h1";
+    const h2 = "highlighted-h2";
+
+    // Map of keywords to highlight and the corresponding classnames.
+    const keywordMap = {
+      "lang:": h1, 
+      "repo:": h1, 
+      "user:": h1, 
+      "AND": h2,
+      "OR": h2,
+      "NOT": h2,
+    };
+
+    highlightedInput(input, keywordMap);
+  </script>
+
+  <footer>
+    <a href="https://github.com/knadh/highlighted-input.js">@knadh/highlighted-input.js</a>
+  </footer>
+</body>
+</html>
