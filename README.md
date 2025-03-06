@@ -5,7 +5,7 @@ highlighted-input.js is a super tiny, zero dependency Javascript lib that highli
 
 [**View demo**](https://knadh.github.io/highlighted-input.js)
 
-![demo](https://github.com/user-attachments/assets/d26afc80-4f4e-4782-b701-138c8ed76026)
+[![demo](https://github.com/user-attachments/assets/d26afc80-4f4e-4782-b701-138c8ed76026)](https://knadh.github.io/highlighted-input.js)
 
 
 ## Usage
