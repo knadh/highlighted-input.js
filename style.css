@@ -1,0 +1,57 @@
+/* Lib component styles */
+.highlighted-wrap {
+    position: relative;
+    margin: 1rem 0;
+}
+
+.highlighted-input,
+.highlighted-layer {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-family: inherit;
+    color: #444;
+    max-width: 100%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.highlighted-input {
+    background: transparent;
+    color: transparent;
+    caret-color: #111;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+}
+.highlighted-input:focus {
+    outline: none;
+    border-color: #0066cc;
+}
+
+.highlighted-layer {
+    background-color: #fff;
+    position: absolute;
+    pointer-events: none;
+    white-space: pre;
+    z-index: 1;
+}
+
+/* Color schemes for different keyword types */
+.highlighted-term {
+    background: #eee;
+    border-radius: 2px;
+    border-radius: 2px;
+}
+.highlighted-h1 {
+    color: #0066cc;
+    background: #e6f2ff;
+}
+
+.highlighted-h2 {
+    color: #cc6600;
+    background: #fff2e6;
+}
