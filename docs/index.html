@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     * {
       box-sizing: border-box;
     }
+
     body {
       font-family: sans-serif;
       font-size: 18px;
@@ -19,7 +21,10 @@
       padding: 0 1rem;
     }
 
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
       line-height: 2.6rem;
     }
 
@@ -29,9 +34,11 @@
       border-top: 1px solid #ddd;
       font-size: 0.8rem;
     }
-      footer, footer a {
-        color: #888;
-      }
+
+    footer,
+    footer a {
+      color: #888;
+    }
 
     .info {
       color: #666;
@@ -39,12 +46,12 @@
       font-size: 0.9rem;
     }
 
-    /* Lib component styles */
+    /* Highlighted input component styles */
     .highlighted-wrap {
       position: relative;
       margin: 1rem 0;
     }
-    
+
     .highlighted-input,
     .highlighted-layer {
       width: 100%;
@@ -57,6 +64,10 @@
       left: 0;
       box-sizing: border-box;
       height: 100%;
+      overflow: auto;
+      white-space: pre;
+      word-wrap: normal;
+      overflow-wrap: normal;
     }
 
     .highlighted-input {
@@ -67,37 +78,40 @@
       border-radius: 4px;
       position: relative;
       z-index: 2;
+      resize: none;
     }
+
     .highlighted-input:focus {
       outline: none;
       border-color: #0066cc;
     }
-    
+
     .highlighted-layer {
       background-color: #fff;
       position: absolute;
       pointer-events: none;
-      white-space: pre;
       z-index: 1;
+      border: 1px solid transparent;
+      border-radius: 4px;
     }
 
     /* Color schemes for different keyword types */
     .highlighted-term {
-      background: #eee;
-      border-radius: 2px;
       border-radius: 2px;
     }
+
     .highlighted-h1 {
       color: #0066cc;
       background: #e6f2ff;
     }
-    
+
     .highlighted-h2 {
       color: #cc6600;
       background: #fff2e6;
     }
   </style>
 </head>
+
 <body>
   <h1>Highlighted search input</h1>
   <p>
@@ -106,10 +120,11 @@
     to highlight field selectors as the user types. It is ~450 bytes minified+gzipped.
   </p>
   <br /><br />
-  
+
   <h3><label for="input">Demo</label></h3>
-  <input type="text" id="input" value="lang:js other stuff AND repo:foo and more OR user:bar" placeholder="Eg: lang:js AND repo:foo OR user:bar" autofocus />
-  
+  <input type="text" id="input" value="lang:js other stuff AND repo:foo and more OR user:bar"
+    placeholder="Eg: lang:js AND repo:foo OR user:bar" autofocus />
+
   <p class="info">Highlighted keywords: <code>repo: lang: user: AND OR NOT</code></p>
   <script type="module">
     import { highlightedInput } from './highlighted-input.min.js';
@@ -121,9 +136,9 @@
 
     // Map of keywords to highlight and the corresponding classnames.
     const keywordMap = {
-      "lang:": h1, 
-      "repo:": h1, 
-      "user:": h1, 
+      "lang:": h1,
+      "repo:": h1,
+      "user:": h1,
       "AND": h2,
       "OR": h2,
       "NOT": h2,
@@ -136,4 +151,5 @@
     <a href="https://github.com/knadh/highlighted-input.js">@knadh/highlighted-input.js</a>
   </footer>
 </body>
+
 </html>

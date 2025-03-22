@@ -1,4 +1,4 @@
-/* Lib component styles */
+/* Highlighted input component styles */
 .highlighted-wrap {
     position: relative;
     margin: 1rem 0;
@@ -16,6 +16,10 @@
     left: 0;
     box-sizing: border-box;
     height: 100%;
+    overflow: auto;
+    white-space: pre;
+    word-wrap: normal;
+    overflow-wrap: normal;
 }
 
 .highlighted-input {
@@ -26,7 +30,9 @@
     border-radius: 4px;
     position: relative;
     z-index: 2;
+    resize: none;
 }
+
 .highlighted-input:focus {
     outline: none;
     border-color: #0066cc;
@@ -36,16 +42,16 @@
     background-color: #fff;
     position: absolute;
     pointer-events: none;
-    white-space: pre;
     z-index: 1;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
 /* Color schemes for different keyword types */
 .highlighted-term {
-    background: #eee;
-    border-radius: 2px;
     border-radius: 2px;
 }
+
 .highlighted-h1 {
     color: #0066cc;
     background: #e6f2ff;
