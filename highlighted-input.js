@@ -48,20 +48,16 @@ export function highlightedInput(input, keywordMap) {
   }
 
   // Attach event listeners.
-  input.addEventListener("input", render);
-  ["scroll", "select", "click", "keyup"].forEach(event => {
-    input.addEventListener(event, syncScroll);
-  });
+  ["input", "change"].forEach(event => input.addEventListener(event, render));
+  ["scroll", "select", "click", "keyup"].forEach(event => input.addEventListener(event, syncScroll));
 
   render();
 
   // Return the cleanup function.
   return {
     cleanup() {
-      input.removeEventListener("input", render);
-      ["scroll", "select", "click", "keyup"].forEach(event => {
-        input.removeEventListener(event, syncScroll);
-      });
+      ["input", "change"].forEach(event => input.removeEventListener(event, render));
+      ["scroll", "select", "click", "keyup"].forEach(event => input.removeEventListener(event, syncScroll));
     }
   };
 }
